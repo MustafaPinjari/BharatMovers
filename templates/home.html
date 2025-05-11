@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<!-- Top Orange Bar -->
+<div class="home-topbar">
+  <div class="home-topbar-container">
+    <a href="{% url 'home' %}" class="home-topbar-link">For Enterprise</a>
+    <a href="{% url 'dp' %}" class="home-topbar-link">Delivery Partners</a>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<div class="home-hero-section">
+  <div class="home-hero-img">
+    <img src="{% static 'images/d1.jpg' %}" alt="Delivery Hero Image" loading="lazy">
+  </div>
+  <div class="home-hero-overlay">
+    <div class="home-hero-content text-center">
+      <h1>Simplified Solutions for Rides,<br>Goods Shipping, and Vehicle Rentals</h1>
+      <div class="home-hero-btns">
+        <a href="#" class="home-btn home-btn-primary">Book Now</a>
+        <a href="#" class="home-btn home-btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Search Bar Section -->
+<div class="home-search-bar-section">
+  <form class="home-search-form">
+    <input type="text" class="home-search-input" placeholder="Find Your Solution Ride Now" name="q">
+    <button class="home-search-btn" type="submit">
+      <span class="home-search-icon">🔍</span>
+    </button>
+  </form>
+</div>
+
+<!-- Explore Our Services Section -->
+<section class="home-services-section">
+  <div class="container">
+    <h2 class="home-section-title">Explore Our Services</h2>
+    <p class="home-section-desc">A comprehensive look into the key offerings that make us your go-to platform for all transportation needs.</p>
+    <div class="home-services-cards-row">
+      <div class="home-service-card">
+        <img src="{% static 'images/icon-ride-hailing.png' %}" alt="Ride Hailing Icon" class="home-service-icon">
+        <h3>Ride-Hailing Services</h3>
+        <p>Book safe, reliable rides for you and your goods—anytime, anywhere.</p>
+        <a href="#" class="home-service-link">Read Now &rarr;</a>
+      </div>
+      <div class="home-service-card">
+        <img src="{% static 'images/icon-transport.png' %}" alt="Goods Transport Icon" class="home-service-icon">
+        <h3>Goods Transport</h3>
+        <p>Ship your goods safely and efficiently with our trusted transport services.</p>
+        <a href="#" class="home-service-link">Read Now &rarr;</a>
+      </div>
+      <div class="home-service-card">
+        <img src="{% static 'images/icon-vehicle-rental.png' %}" alt="Vehicle Rentals Icon" class="home-service-icon">
+        <h3>Vehicle Rentals</h3>
+        <p>Rent a vehicle for a day, week, or month. Choose from cars, bikes, buses, and more with flexible rental plans.</p>
+        <a href="#" class="home-service-link">Read Now &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Big Image/Visual Section -->
+<div class="home-visual-section">
+  <img src="{% static 'images/d4.jpg' %}" alt="Goods Delivered Visual" class="home-visual-img">
+</div>
+
+<!-- How it works Section -->
+<section class="home-how-section">
+  <div class="container">
+    <div class="home-how-header-row">
+      <div class="home-how-header-content">
+        <h2 class="home-section-title">How it works</h2>
+        <p class="home-section-desc">Our process is designed to be simple, transparent, and reliable, ensuring that booking and using our services is always a smooth and hassle-free experience.</p>
+      </div>
+      <div class="home-how-cta-btns">
+        <a href="#" class="home-btn home-btn-primary">Sign Up</a>
+        <a href="#" class="home-btn home-btn-secondary">Ride Today</a>
+      </div>
+    </div>
+    <div class="row home-how-main-row">
+      <div class="col-md-7 home-how-steps-area">
+        <div class="home-how-step">
+          <div class="home-how-step-icon">
+            <div class="icon-circle">
+              <img src="{% static 'images/search.png' %}" alt="Browse Icon">
+            </div>
+          </div>
+          <div class="home-how-step-content">
+            <div class="home-how-step-title">Browse and select</div>
+            <div class="home-how-step-desc">Choose the service that best fits your needs, whether it's a ride, vehicle rental, or goods transport.</div>
+          </div>
+        </div>
+        <div class="home-how-step">
+          <div class="home-how-step-icon">
+            <div class="icon-circle">
+              <img src="{% static 'images/hotel.png' %}" alt="Book Icon">
+            </div>
+          </div>
+          <div class="home-how-step-content">
+            <div class="home-how-step-title">Book and confirm</div>
+            <div class="home-how-step-desc">Secure your booking through our easy-to-use platform, confirming your reservation instantly.</div>
+          </div>
+        </div>
+        <div class="home-how-step">
+          <div class="home-how-step-icon">
+            <div class="icon-circle">
+              <img src="{% static 'images/enjoy.png' %}" alt="Enjoy Icon">
+            </div>
+          </div>
+          <div class="home-how-step-content">
+            <div class="home-how-step-title">Enjoy the Experience</div>
+            <div class="home-how-step-desc">On the scheduled day, your vehicle or service will be ready, with our team available to assist, ensuring everything goes smoothly.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 home-how-support-img-area">
+        <img src="{% static 'images/f1.jpg' %}" alt="How it works support visual" class="home-how-support-img">
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

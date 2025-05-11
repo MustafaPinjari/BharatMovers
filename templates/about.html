@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<div class="about-hero-section container">
+  <div class="row about-feature-row">
+    <div class="col-md-6 about-feature-img-wrap">
+      <img src="{% static 'images/sc.jpg' %}" class="about-feature-img" alt="Team assembling">
+    </div>
+    <div class="col-md-6 about-feature-card">
+      <h2>About Us</h2>
+      <p class="about-feature-desc">
+        Welcome to Bharat Movers-where convenience, reliability, and
+customer satisfaction meet to provide exceptional transportation and
+logistics services. Whether you're booking a ride, moving goods, or
+renting a vehicle, we are here to simplify the process and make your
+experience seamless.
+    </p>
+    </div>
+  </div>
+  <div class="row about-feature-row mt-5">
+    <div class="col-md-6 order-md-2 about-feature-img-wrap">
+      <img src="{% static 'images/hands.jpg' %}" class="about-feature-img" alt="Team Mission">
+    </div>
+    <div class="col-md-6 order-md-1 about-feature-card">
+      <h3>Our Mission</h3>
+      <p class="about-feature-desc">
+        Our mission is to create a platform that offers fast, reliable, and
+        affordable transportation solutions for both individuals and
+        businesses. We believe in empowering our customers by providing
+        them with easy access to the services they need-whether it's a
+        quick ride, logistics support, or vehicle rental.
+      </p>
+    </div>
+  </div>
+  <div class="row about-feature-row mt-5">
+    <div class="col-md-6 about-feature-img-wrap">
+      <img src="{% static 'images/meeting.jpg' %}" class="about-feature-img" alt="Our Vision">
+    </div>
+    <div class="col-md-6 about-feature-card">
+      <h3>Our Vision</h3>
+      <p class="about-feature-desc">
+        To be the go-to platform for transportation and logistics needs by
+continually innovating and improving the services we offer. We aim to
+build a connected community that relies on our platform for hassle-
+free and dependable transportation experiences.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Stats Section -->
+<div class="about-stats-section">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col about-stat-item">
+        <div class="about-stat-value">20+</div>
+        <div class="about-stat-label">Cities Served</div>
+      </div>
+      <div class="col about-stat-item">
+        <div class="about-stat-value">10+</div>
+        <div class="about-stat-label">Years Experience</div>
+      </div>
+      <div class="col about-stat-item">
+        <div class="about-stat-value">12K+</div>
+        <div class="about-stat-label">Shipments</div>
+      </div>
+      <div class="col about-stat-item">
+        <div class="about-stat-value">100%</div>
+        <div class="about-stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Choose Us -->
+<div class="about-why-section">
+  <h2 class="about-why-title">Why Choose Us?</h2>
+  <p class="about-why-desc">At Bharat Movers, we believe in offering more than just services; we deliver experiences. Here's why customers choose us:</p>
+  <div class="about-why-cards-container">
+    <div class="about-why-card">
+      <div class="about-why-icon-wrapper">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <div class="about-why-card-title">Safe & Secure</div>
+      <div class="about-why-card-desc">Your safety and belongings are our top priority with every trip and delivery.</div>
+    </div>
+    <div class="about-why-card">
+      <div class="about-why-icon-wrapper">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="about-why-card-title">Professional Team</div>
+      <div class="about-why-card-desc">Experienced professionals, always on time and ready to help, every step of the way.</div>
+    </div>
+    <div class="about-why-card">
+      <div class="about-why-icon-wrapper">
+        <i class="fas fa-headset"></i>
+      </div>
+      <div class="about-why-card-title">24/7 Support</div>
+      <div class="about-why-card-desc">We're here for you any time of day, always happy to answer and assist.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Large delivery/experience image section -->
+<div class="about-experience-image">
+  <img src="{% static 'images/delivery.jpg' %}" alt="Delivery Experience Image">
+</div>
+
+<!-- Team Section -->
+<div class="about-team-section container">
+  <div class="about-team-header-row">
+    <h2 class="about-team-title">Say hi to our incredible team members.</h2>
+    <a href="#" class="about-team-link">Interested in joining our team?</a>
+  </div>
+  <div class="row about-team-members">
+    <div class="col-md-3 col-6 about-team-card">
+      <img src="{% static 'images/tm/1.jpg' %}" alt="Amit Kumar" class="about-team-img">
+      <div class="about-team-name">Amit Kumar</div>
+      <div class="about-team-role">Co-founder & CEO</div>
+    </div>
+    <div class="col-md-3 col-6 about-team-card">
+      <img src="{% static 'images/tm/2.jpg' %}" alt="Priya Sharma" class="about-team-img">
+      <div class="about-team-name">Priya Sharma</div>
+      <div class="about-team-role">Head of Operations</div>
+    </div>
+    <div class="col-md-3 col-6 about-team-card">
+      <img src="{% static 'images/tm/3.jpg' %}" alt="Ravi Patel" class="about-team-img">
+      <div class="about-team-name">Ravi Patel</div>
+      <div class="about-team-role">Lead Dispatcher</div>
+    </div>
+    <div class="col-md-3 col-6 about-team-card">
+      <img src="{% static 'images/tm/4.jpg' %}" alt="Sunita Singh" class="about-team-img">
+      <div class="about-team-name">Sunita Singh</div>
+      <div class="about-team-role">Customer Support</div>
+    </div>
+    <div class="col-md-3 col-6 about-team-card">
+      <img src="{% static 'images/tm/5.jpg' %}" alt="Samuel Joy" class="about-team-img">
+      <div class="about-team-name">Samuel Joy</div>
+      <div class="about-team-role">Fleet Manager</div>
+    </div>
+    <div class="col-md-3 col-6 about-team-card">
+      <img src="{% static 'images/tm/6.jpg' %}" alt="Meera Nair" class="about-team-img">
+      <div class="about-team-name">Meera Nair</div>
+      <div class="about-team-role">Logistics Exec</div>
+    </div>
+    <div class="col-md-3 col-6 about-team-card">
+      <img src="{% static 'images/tm/7.jpg' %}" alt="Vijay Raju" class="about-team-img">
+      <div class="about-team-name">Vijay Raju</div>
+      <div class="about-team-role">Driver Partner</div>
+    </div>
+    <div class="col-md-3 col-6 about-team-card">
+      <img src="{% static 'images/tm/7.jpg' %}" alt="Sofia Das" class="about-team-img">
+      <div class="about-team-name">Sofia Das</div>
+      <div class="about-team-role">Growth Lead</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<div class="about-cta-section" style="background-image: url('{% static 'images/contact.jpg' %}');"> 
+  <div class="about-cta-overlay"></div>
+  <div class="about-cta-content">
+    <div class="about-cta-text">
+      <h2>Get in touch with us <br>for your service and query</h2>
+      <a href="#" class="about-cta-btn">Contact Us</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

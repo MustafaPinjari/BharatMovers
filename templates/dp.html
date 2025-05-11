@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/partner.css' %}">
+
+<!-- HERO SECTION -->
+<div class="delivery-hero-section">
+    <img class="delivery-hero-bg" src="{% static 'images/dp.png' %}" alt="Delivery partners" />
+    <div class="delivery-hero-overlay">
+        <div class="hero-content">
+            <h1>Join Our Delivery Partner Network</h1>
+            <p class="hero-desc">At Bharat Movers, we're transforming transportation by connecting delivery partners with endless earning opportunities. Whether you own a two-wheeler or a fleet of commercial vehicles, our platform helps you maximize your potential with reliable orders, transparent pricing, and hassle-free management.</p>
+        </div>
+    </div>
+</div>
+
+<div class="hero-text">
+    <p>
+        At Bharat Movers, we're transforming transportation by connecting delivery partners with endless earning opportunities. Whether you own a two-wheeler or a fleet of commercial vehicles, our platform helps you maximize your potential with reliable orders, transparent pricing, and hassle-free management.
+    </p>
+</div>
+
+<!-- FORM SECTION -->
+<div class="container partner-form-section">
+    <h2>Attach Your Vehicle and<br>Start Earning Today</h2>
+    <form class="partner-form-card">
+        <div class="partner-form-grid">
+            <div class="form-group">
+                <input type="text" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email Id" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Mobile No" required>
+            </div>
+        </div>
+        <div class="partner-form-row">
+            <div class="form-group">
+                <select required>
+                    <option value="">Vehicle Type</option>
+                    <option>Bike</option>
+                    <option>Mini Truck</option>
+                    <option>Pickup Van</option>
+                </select>
+            </div>
+        </div>
+        <div class="partner-form-check">
+            <input id="agree" type="checkbox" required>
+            <label for="agree">I agree to accept the privacy policy, We will add your contact details provided in this form to our system for contacting you regarding your request.</label>
+        </div>
+        <button type="submit" class="partner-register-btn">REGISTER →</button>
+    </form>
+</div>
+
+<!-- WHY PARTNER SECTION -->
+<div class="why-partner-section">
+    <h3>Why Partner with Us?</h3>
+    <div class="why-partner-grid">
+        <div class="why-partner-item">
+            <img src="{% static 'images/icons/money.png' %}" alt="Income" class="partner-icon"/>
+            <div class="why-partner-title">Steady Income Stream</div>
+            <div class="why-partner-desc">Enjoy consistent trips and guaranteed payments.</div>
+        </div>
+        <div class="why-partner-item">
+            <img src="{% static 'images/icons/top-rated.png' %}" alt="Bills" class="partner-icon"/>
+            <div class="why-partner-title">Transparent Rates</div>
+            <div class="why-partner-desc">Fair, standardized pricing with no haggling.</div>
+        </div>
+        <div class="why-partner-item">
+            <img src="{% static 'images/icons/maps.png' %}" alt="GPS" class="partner-icon"/>
+            <div class="why-partner-title">GPS Navigation</div>
+            <div class="why-partner-desc">Easy, real-time directions for stress-free driving.</div>
+        </div>
+        <div class="why-partner-item">
+            <img src="{% static 'images/icons/commerce.png' %}" alt="Growth" class="partner-icon"/>
+            <div class="why-partner-title">Extra Incentives</div>
+            <div class="why-partner-desc">Earn bonuses and rewards for top performance.</div>
+        </div>
+        <div class="why-partner-item">
+            <img src="{% static 'images/icons/extra.png' %}" alt="Clock" class="partner-icon"/>
+            <div class="why-partner-title">Flexible Hours</div>
+            <div class="why-partner-desc">Work when it suits your schedule.</div>
+        </div>
+    </div>
+</div>
+
+<!-- FLEET OPTIONS SECTION -->
+<div class="fleet-options-section container">
+    <h3>Our Fleet Options</h3>
+    <div class="fleet-options-grid">
+        <div class="fleet-option-card">
+            <img src="{% static 'images/icons/s.png' %}" alt="Two-Wheeler"/>
+            <div class="fleet-option-title">Two-Wheelers</div>
+            <div class="fleet-option-desc">Perfect for lightweight, quick deliveries across the city.</div>
+        </div>
+        <div class="fleet-option-card">
+            <img src="{% static 'images/icons/t1.png' %}" alt="Small Trucks"/> 
+            <div class="fleet-option-title">Small Trucks</div>
+            <div class="fleet-option-desc">Ideal for short-distance goods transport like Tata Ace.</div>
+        </div>
+        <div class="fleet-option-card">
+            <img src="{% static 'images/icons/t2.png' %}" alt="Large Trucks"/>
+            <div class="fleet-option-title">Large Trucks</div>
+            <div class="fleet-option-desc">Cater to bulk orders with vehicles like Pickup 8FT and Carrier 14FT.</div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA JOIN SECTION -->
+<div class="delivery-cta-section">
+    <img src="{% static 'images/tkc.png' %}" alt="Join Delivery" class="delivery-cta-bg"/>
+    <div class="delivery-cta-overlay">
+        <div>
+            <div class="delivery-cta-title">Start Your Journey Today!</div>
+            <p class="hero-desc">Sign up now to partner with us and unlock new opportunities in the world of goods transportation. With Bharat Movers, your success is just a drive away!</p>
+            <a href="#" class="delivery-cta-btn">Join Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

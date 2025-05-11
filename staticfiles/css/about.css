@@ -1,0 +1,386 @@
+/* ==== Bharat Movers About Page Custom Styles ==== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Hero & Feature Rows */
+.about-hero-section { margin-top: 28px; margin-bottom: 48px; }
+.about-feature-row { align-items: center; margin-bottom: 36px; }
+.about-feature-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-right: 8px;
+}
+.about-feature-img-wrap::after {
+  content: '';
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 100%;
+  background: #ffe600;
+  /* border-radius: 4px; */
+}
+.about-feature-img {
+  max-width: 90%;
+  min-width: 180px;
+  width: 100%;
+  height: 300px;
+  /* border-radius: 9px; */
+  box-shadow: 0 6px 30px rgba(51,51,51,0.14);
+  object-fit: cover;
+}
+.about-feature-card {
+  padding: 15px 0;
+}
+.about-feature-card h2, .about-feature-card h3 {
+  color: #000000;
+  font-weight: 800;
+  margin-bottom: 16px;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+.about-feature-desc {
+  font-size: 0.8rem;
+  color: #242424;
+  line-height: 1.6;
+  font-weight: 200;
+  text-wrap: balance;
+  width: 80%;
+  left: 50px;
+}
+
+/* Stats Section */
+.about-stats-section {
+  background: #fff;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 50px 0;
+  position: relative;
+  width: 100%;
+  left: 0;
+}
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0;
+}
+.about-stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #cc5100;
+  margin-bottom: 10px;
+  line-height: 1;
+  text-align: center;
+}
+.about-stat-label {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Why Choose Us */
+.about-why-section {
+  background: #181818;
+  padding: 120px 0;
+  margin: 0;
+  position: relative;
+  width: 99vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about-why-title {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+.about-why-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #cc5100;
+}
+.about-why-desc {
+  color: #999;
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 30px auto;
+  max-width: 700px;
+  padding: 0 20px;
+}
+.about-why-cards-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 0 40px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-why-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  padding: 40px 30px;
+  flex: 1;
+  max-width: 380px;
+  text-align: center;
+  margin: 0;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.about-why-card:hover {
+  transform: translateY(-10px);
+}
+.about-why-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(204,81,0,0.15);
+}
+.about-why-icon-wrapper i {
+  font-size: 35px;
+  color: #cc5100;
+}
+.about-why-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #cc5100;
+  margin-bottom: 20px;
+}
+.about-why-card-desc {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .about-why-cards-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .about-why-card {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Experience Image */
+.about-experience-image {
+  width: 100%;
+  margin: 0 auto 40px auto;
+  /* background: #fff; */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.about-experience-image img {
+  width: 100%;
+  max-width: 1500px;
+  border-radius: 10px;
+  height: auto;
+  object-fit: cover;
+  margin: 50px 15px;
+}
+
+/* Team Section */
+.about-team-section {
+  margin-top: 0; margin-bottom: 58px;
+}
+.about-team-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  gap: 18px;
+}
+.about-team-title {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #191919;
+}
+.about-team-link {
+  color: #cc5100;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.14s;
+}
+.about-team-link:hover {
+  color: #914000;
+  text-decoration: underline;
+}
+.about-team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.about-team-card {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.about-team-img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 13px rgba(0,0,0,0.13);
+  background: #efefef;
+}
+.about-team-name {
+  font-weight: 700;
+  font-size: 1.07rem;
+  color: #232323;
+  margin-bottom: 2px;
+}
+.about-team-role {
+  font-size: 0.92rem;
+  color: #777;
+}
+
+/* CTA Section */
+.about-cta-section {
+  width: 100%;
+  height: 150%;
+  background-color: #cc5100;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 80px 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background: rgba(204, 81, 0, 0.85);
+  z-index: 1;
+}
+.about-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 12px;
+  left: 5%;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.about-cta-text {
+  flex: 1;
+  padding: 0;
+  text-align: left;
+}
+.about-cta-text h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+.about-cta-btn {
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  background: #000000;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 37px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 7px;
+  transition: background 0.14s, color 0.14s;
+}
+.about-cta-btn:hover { background: #ffe9d5; color: #963d00; }
+.about-cta-img-wrap {
+  flex: 1;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.about-cta-img-wrap img {
+  width: 290px;
+  max-height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 20px 0 20px 34px;
+}
+
+@media (max-width: 1024px) {
+  .about-why-row { flex-direction: column; gap: 14px; }
+  .about-cta-content { flex-direction: column; align-items: flex-start;}
+  .about-cta-img-wrap img { margin: 16px 0 0 0; width: 95vw; max-width: 300px; }
+  .about-team-members { gap: 20px; justify-content: center; }
+  .about-team-card { width: calc(33.33% - 20px); }
+}
+
+@media (max-width: 768px) {
+  .about-team-card { width: calc(50% - 20px); }
+  .about-stat-item { width: 50%; }
+  .about-why-card { min-width: unset; }
+  .about-team-header-row { flex-direction: column; align-items: center; text-align: center; }
+}
+
+@media (max-width: 700px) {
+  .about-feature-img { width: 100%; min-width: 120px; }
+  .about-feature-card { padding: 14px 7vw; }
+  .about-team-members { flex-direction: row; flex-wrap: wrap; }
+  .about-cta-text { padding: 18px 0; }
+  .about-cta-content { padding: 0 4vw; }
+  .about-why-title { font-size: 1.4rem; padding: 0 15px; }
+  .about-feature-card h2, .about-feature-card h3 { font-size: 1.3rem; }
+  .about-feature-desc { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .about-team-card { width: 100%; }
+  .about-stat-item { width: 100%; }
+  .about-hero-section { margin-top: 15px; margin-bottom: 30px; }
+  .about-feature-row { margin-bottom: 25px; }
+  .about-cta-text h2 { font-size: 1.3rem; }
+}
+
+/* Placeholder image notes:
+   - about-team.png
+   - about-mission.png
+   - about-vision.png
+   - about-secure.png
+   - about-professional.png
+   - about-support.png
+   - about-delivery.png
+   - team-member-1.png ... team-member-8.png
+   - about-contact.png
+*/

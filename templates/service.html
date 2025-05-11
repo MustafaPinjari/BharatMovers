@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/service.css' %}">
+
+<div class="service-hero-section">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" class="hero-bg-image" alt="Ride hailing background">
+    <div class="hero-overlay">
+        <h1>Ride-Hailing Services</h1>
+        <p>Bharat Movers Ride-Hailing Services redefine urban transportation by blending convenience, affordability, and safety. Whether you're heading to work, meeting friends, or running errands, our fleet of vehicles ensures you reach your destination effortlessly.</p>
+    </div>
+    <div class="booking-box">
+        <form class="booking-form">
+            <div class="form-group">
+                <label>select vehicle</label>
+                <select>
+                    <option selected>vehicles</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Pickup Date & Time</label>
+                <input type="text" placeholder="Select">
+            </div>
+            <div class="form-group">
+                <label>Pick-up location</label>
+                <input type="text" placeholder="Search a location">
+            </div>
+            <div class="form-group">
+                <label>Drop-Off Location</label>
+                <input type="text" placeholder="Search a location">
+            </div>
+            <button type="submit" class="book-now-btn">Book now <span class="arrow">→</span></button>
+        </form>
+    </div>
+</div>
+
+<div class="why-choose-section">
+    <div class="why-left">
+        <h2>Why Choose Our <br>Ride-Hailing Services?</h2>
+        <p class="why-desc">Effortless rides with comfort, safety, and convenience guaranteed.</p>
+        <div class="why-images">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="Woman commuting" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Bag and keys in car" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80" alt="Scooter rider" loading="lazy">
+        </div>
+    </div>
+    <div class="why-right">
+        <ul class="features-list">
+            <li>
+                <span class="feature-icon" style="background-color: #FF6A00;"><img src="{% static 'images/icons/ODR.png' %}" alt="On-Demand Rides"></span>
+                <div>
+                    <div class="feature-title">On-Demand Rides</div>
+                    <div class="feature-desc">Access rides at your convenience, anytime, anywhere.</div>
+                </div>
+            </li>
+            <li>
+                <span class="feature-icon" style="background-color: #FF6A00;"><img src="{% static 'images/icons/fleet.png' %}" alt="Wide Vehicle Range"></span>
+                <div>
+                    <div class="feature-title">Wide Vehicle Range</div>
+                    <div class="feature-desc">Choose from bikes, economy cars, or premium sedans.</div>
+                </div>
+            </li>
+            <li>
+                <span class="feature-icon" style="background-color: #FF6A00;"><img src="{% static 'images/icons/discount.png' %}" alt="Transparent Pricing"></span>
+                <div>
+                    <div class="feature-title">Transparent Pricing</div>
+                    <div class="feature-desc">Know the fare upfront with no hidden charges.</div>
+                </div>
+            </li>
+            <li>
+                <span class="feature-icon" style="background-color: #FF6A00;"><img src="{% static 'images/icons/location.png' %}" alt="Real-Time Tracking"></span>
+                <div>
+                    <div class="feature-title">Real-Time Tracking</div>
+                    <div class="feature-desc">Stay updated on your ride's status with live tracking.</div>
+                </div>
+            </li>
+            <li>
+                <span class="feature-icon" style="background-color: #FF6A00;"><img src="{% static 'images/icons/clock.png' %}" alt="Safety First"></span>
+                <div>
+                    <div class="feature-title">Safety First</div>
+                    <div class="feature-desc">Verified drivers, secure payment options, and 24/7 customer support.</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="cta-section">
+    <img class="cta-bg" src="{% static 'images/TD.jpg' %}" alt="Taxi Background"/>
+    <div class="cta-overlay">
+        <h2>Ready to Book Your Ride?</h2>
+        <a href="#" class="cta-btn">Book Your Ride Now</a>
+    </div>
+</div>
+
+<div class="key-features-section container">
+    <div class="key-features-left">
+        <h3>Key Features</h3>
+        <p>Great variety, rich choice, affordable transportation for every need.</p>
+        <ul class="key-feature-list">
+            <li><span class="feature-bullet" style="background:#FF6A00;"><img src="{% static 'images/icons/check.png' %}" alt="Group" /></span> Choose from bikes for solo rides, sedans for group travel, or roomy minivans for special occasions.</li>
+            <li><span class="feature-bullet" style="background:#FF6A00;"><img src="{% static 'images/icons/check.png' %}" alt="Calendar" /></span> Enjoy seamless booking and a simple, reliable app and professional drivers.</li>
+            <li><span class="feature-bullet" style="background:#FF6A00;"><img src="{% static 'images/icons/check.png' %}" alt="Checkmark" /></span> Upfront, discounted ride deals allow you to save on every ride.</li>
+        </ul>
+    </div>
+    <div class="key-features-right">
+        <div class="feature-imgs">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Service customer">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="App usage">
+        </div>
+    </div>
+</div>
+{% endblock %}
