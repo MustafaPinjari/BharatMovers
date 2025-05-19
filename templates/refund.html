@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/refund.css' %}">
+    <header>
+        <img src="{% static 'images/refund.png' %}" alt="Refund and Cancellation Policy hero image" class="hero-image">
+        <h1>Refund & Cancellation Policy</h1>
+    </header>
+    <main>
+        <section class="intro">
+            <p>Our Refund & Cancellation Policy outlines the process and conditions under which you can request a refund or cancel services. We aim to provide fair and transparent guidelines for all our customers.</p>
+        </section>
+        <section class="policy-section">
+            <h2>Cancellation Policy</h2>
+            <ul>
+                <li><span class="bullet-orange"></span> <strong>Order Timing/Status:</strong> Cancellations can be done before an order is shipped and/or prior to start of service. After engagement, a cancellation fee may apply.</li>
+                <li><span class="bullet-orange"></span> <strong>Third-Party Services:</strong> Cancellations for solutions (such as domain registration or third-party digital goods) are subject to those third party’s refund and cancellation terms. (See your confirmation/receipt for specifics.)</li>
+                <li><span class="bullet-orange"></span> <strong>Virtual/Downloadable:</strong> You cannot cancel services once work is 50% or more fulfilled, delivered, or downloadable (e.g. canceled order is valid if less than 50% is delivered or access has not been sent).</li>
+            </ul>
+        </section>
+        <section class="policy-section">
+            <h2>Refund Policy</h2>
+            <ul>
+                <li><span class="bullet-orange"></span> <strong>When Refunds Happen:</strong> Refunds for services that have not been charged for or where objectives will not be processed in 2-5 more business days. Please contact support within 24 hours of purchase if you believe you are eligible for a refund.</li>
+                <li><span class="bullet-orange"></span> <strong>Refund Method:</strong> Refunds will be credited to the original payment method, minus processing fees where applicable. Refunds for completed services are not issued. Requests must be made within 24 hours from the date of order.</li>
+                <li><span class="bullet-orange"></span> <strong>No Partial Refunds:</strong> We do not provide partial refunds for unused portions of partially completed services unless otherwise stated on your order invoice or contract.</li>
+            </ul>
+        </section>
+        <section class="policy-section">
+            <h2>How to Request a Refund or Cancellation</h2>
+            <p>To request a service refund or a cancellation, please contact support team at Email or Phone Number. Provide your order booking details, reason for cancellation, and any relevant information to help process your request quickly.</p>
+        </section>
+        <section class="policy-section">
+            <h2>Processing Time</h2>
+            <p>Refunds will be processed within 2-7 business days, depending on the payment method used. Refunds to credit/debit cards may take longer due to bank processing timelines.</p>
+        </section>
+        <section class="policy-section">
+            <h2>Non-refundable Services</h2>
+            <p>Certain services are not eligible for a refund, including:</p>
+            <ul>
+                <li><span class="bullet-orange"></span> Domain registration</li>
+                <li><span class="bullet-orange"></span> Digital downloads</li>
+                <li><span class="bullet-orange"></span> Completed services</li>
+            </ul>
+        </section>
+        <section class="policy-section">
+            <h2>Dispute Resolution</h2>
+            <p>If you are dissatisfied with a refund or cancellation decision, you can escalate the issue to our customer service team leader. Further escalation steps will be shared if the matter isn't resolved to your satisfaction.</p>
+        </section>
+        <section class="policy-section">
+            <h2>Changes to Refund & Cancellation Policy</h2>
+            <p>We reserve the right to update or change this policy at any time. Any changes will be notified via customer email, and continued use of services implies your acceptance of the updated policy.</p>
+        </section>
+    </main>
+
+{% endblock %}

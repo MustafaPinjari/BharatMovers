@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/privacy.css' %}">
+
+<header class="privacy-header">
+  <h1>Privacy Policy</h1>
+</header>
+<main class="privacy-main container">
+  <img class="privacy-hero-img" src="{% static 'images/privacy.png' %}" alt="Privacy Policy" />
+  <section class="privacy-card">
+    <p>At Bharat Movers, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and share your personal information when you use our services.</p>
+
+    <h2>Information We Collect</h2>
+    <p>We collect and process personal data or sensitive information, including:</p>
+    <ul class="privacy-list">
+      <li><span class="icon-bullet orange"><i class="fas fa-user"></i></span> Personal details (name, email, address, payment information).</li>
+      <li><span class="icon-bullet orange"><i class="fas fa-map-marker-alt"></i></span> Location/device data (ride/service locations, IP address).</li>
+      <li><span class="icon-bullet orange"><i class="fas fa-phone"></i></span> Usage and interaction information (app & website).</li>
+      <li><span class="icon-bullet orange"><i class="fas fa-briefcase"></i></span> Emergency information (if relevant).</li>
+    </ul>
+
+    <h2>How We Use Your Information</h2>
+    <p>We may use this information to:</p>
+    <ul>
+      <li>Provide our services to you.</li>
+      <li>Process and fulfill your requests, account, transactions, or rides.</li>
+      <li>Communicate with you and improve our services.</li>
+      <li>Ensure the safety of our users, drivers, and partners.</li>
+    </ul>
+
+    <h2>Data Sharing and Disclosure</h2>
+    <p>We may share limited data with our partners strictly for the purposes related to service delivery (e.g., payment providers, logistics partners). We do not sell or share your information for advertising purposes.</p>
+
+    <h2>Data Security</h2>
+    <p>We take your data security seriously and protect your information from unauthorized access, alteration, or disclosure. However, no system is 100% secure, and we cannot guarantee the absolute security of your data.</p>
+
+    <h2>Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access, correct, or delete your personal information.</li>
+      <li>Restrict or object to specific types of data processing/collection.</li>
+    </ul>
+
+    <h2>Cookies and Tracking Technologies</h2>
+    <p>We use cookies and similar tracking technologies to enhance the experience on our platform. You can manage or disable cookies through your browser settings.</p>
+
+    <h2>Retention of Data</h2>
+    <p>We retain your information only as long as necessary to provide services, comply with legal obligations, and resolve disputes.</p>
+
+    <h2>Changes to Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be communicated, and your continued use of the website after such changes indicates your acceptance of the revised Privacy Policy.</p>
+  </section>
+</main>
+{% endblock %}
