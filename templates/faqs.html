@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/faq.css' %}" rel="stylesheet">
+<div class="faq-main-section">
+  <div class="faq-title">
+    <h1>Frequently<br>asked questions</h1>
+  </div>
+  <div class="faq-layout">
+    <div class="faq-list">
+      <div class="faq-card">
+        <div class="faq-q">What services does Bharat Movers provide?</div>
+        <div class="faq-a">We offer ride-hailing, goods transport, and vehicle rental services to meet your travel and logistics needs efficiently.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How do I book a ride or service?</div>
+        <div class="faq-a">Simply use our app or website, enter your details, select the service, and confirm your booking.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">What payment methods do you accept?</div>
+        <div class="faq-a">We accept credit/debit cards, UPI, e-wallets, and cash for your convenience.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Can I track my rides or shipments in real-time?</div>
+        <div class="faq-a">Yes, you can track all your bookings live via our app or website for complete transparency.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How can I contact support?</div>
+        <div class="faq-a">Reach out to us via our [Contact Us] page or use our in-app chat feature for quick assistance.</div>
+      </div>
+    </div>
+    <div class="faq-side-wrapper">
+      <img class="faq-support-img" src="{% static 'images/faq.png' %}" alt="Support icon" />
+      <div class="faq-side-card">
+        <img class="faq-message-icon" src="{% static 'images/icons/message.png' %}" alt="Message icon" />
+        <div class="faq-side-card-content">
+          <div class="faq-side-title">Do you have more questions?</div>
+          <div class="faq-side-desc">End-to-end payments and financial management in a single solution. Meet the right platform to help realize.</div>
+          <a class="faq-side-btn" href="#">Shoot a Direct Mail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="faq-ask-section">
+    <div class="faq-ask-bg">
+      <i class="fa-regular fa-circle-question question-icon icon-left"></i>
+      <i class="fa-regular fa-circle-question question-icon icon-right"></i>
+    </div>
+    <div class="faq-ask-content">
+      <h2>Still have questions?</h2>
+      <p>We’d love to assist you! Visit our <a href="#">Help Center</a> or get in touch with our support team.</p>
+    </div>
+  </section>
+  <section class="faq-contact-section">
+      <div class="about-cta-section" style="background-image: url('{% static 'images/contact.jpg' %}');"> 
+          <div class="about-cta-overlay"></div>
+          <div class="about-cta-content">
+              <div class="about-cta-text">
+                  <h2>Get in touch with us <br>for your service and query</h2>
+                  <a href="#" class="about-cta-btn">Contact Us</a>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>
+{% endblock %}

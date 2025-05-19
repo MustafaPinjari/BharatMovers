@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/careers.css' %}" rel="stylesheet">
+<header class="careers-hero">
+    <p class="careers-hint">CAREER AT BHARAT MOVERS</p>
+    <h1 class="careers-intro">We hired people who are<br>Always Passionate about<br>what they do</h1>
+    <div class="careers-title-image-wrap"><span class="careers-title-mask">Careers</span></div>
+    <a href="#open-positions" class="careers-btn">See Our open positions</a>
+</header>
+<main>
+    <section class="careers-positions" id="open-positions">
+        <div class="careers-cards-container">
+            {% for i in "123456789"|make_list %}
+            <div class="careers-card">
+                <div class="careers-card-title">XXXXXXXXXXXXXXX</div>
+                <div class="careers-card-meta">Bangalore - Full Time<br>$30k - $50k / No equity</div>
+                <div class="careers-card-meta">Weekdays shifts | 9am-5pm IST</div>
+                <a href="#" class="careers-card-apply">Apply Now</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="careers-benefits-img">
+        <img  src="{% static 'images/carrer2.png' %}" alt="Office - Bharat Movers" >
+    </section>
+    <section class="careers-why">
+        <h2>Why You’ll Love Working<br>at Bharat Movers</h2>
+        <div class="careers-why-icons">
+            <div class="careers-why-feature">
+                <i class="fa-solid fa-mountain"></i>
+                <span>Exciting Challenges</span>
+            </div>
+            <div class="careers-why-feature">
+                <i class="fa-solid fa-users"></i>
+                <span>Incredible Team</span>
+            </div>
+            <div class="careers-why-feature">
+                <i class="fa-solid fa-clock"></i>
+                <span>Flexible Hours</span>
+            </div>
+            <div class="careers-why-feature">
+                <i class="fa-solid fa-heart"></i>
+                <span>Engaging Perks</span>
+            </div>
+            <div class="careers-why-feature">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Learning Hub</span>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
