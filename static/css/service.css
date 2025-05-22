@@ -17,6 +17,7 @@
   top: 0;
   left: 0;
   z-index: -1;
+  display: block;
 }
 
 .hero-overlay {
@@ -112,8 +113,7 @@
 
 /* Why Choose Section */
 .why-choose-section {
-  padding: 80px 0;
-  /* background: #fff; */
+  padding: 80px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -241,7 +241,7 @@
   align-items: center;
   text-align: center;
   color: white;
-  max-width: 1500px;
+  padding: 0 20px;
 }
 
 .cta-overlay h2 {
@@ -266,7 +266,7 @@
 
 /* Key Features Section */
 .key-features-section {
-  padding: 80px 0;
+  padding: 80px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -334,25 +334,7 @@
   transition: transform 0.3s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-overlay h1 {
-    font-size: 2.5rem;
-  }
-  
-  .booking-form {
-    grid-template-columns: 1fr;
-  }
-  
-  .why-images {
-    grid-template-columns: 1fr;
-  }
-  
-  .feature-imgs {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Bento Grid */
 .bento-grid {
     width: 100%;
     padding: 20px;
@@ -360,11 +342,10 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 150px);
     gap: 16px;
     padding: 8px;
-    /* background: #f5f5f5; */
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -373,7 +354,6 @@
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .grid-item.large {
@@ -382,7 +362,7 @@
 }
 
 .grid-item:not(.large) {
-    grid-column: span 3;
+    grid-column: span 2;
     grid-row: span 1;
 }
 
@@ -397,17 +377,214 @@
     transform: scale(1.05);
 }
 
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-overlay h1 {
+        font-size: 3rem;
+    }
+    
+    .why-choose-section,
+    .key-features-section {
+        gap: 40px;
+        padding: 60px 20px;
+    }
+    
+    .why-left h2,
+    .key-features-left h3 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-overlay p {
+        font-size: 1.1rem;
+    }
+    
+    .booking-box {
+        padding: 20px;
+    }
+    
+    .why-choose-section,
+    .key-features-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .why-images {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 180px);
+    }
+    
+    .why-images img:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+    .why-images img:nth-child(2),
+    .why-images img:last-child {
+        grid-column: span 1;
+    }
+    
+    .cta-overlay h2 {
+        font-size: 2.2rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .service-hero-section {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .hero-overlay {
+        position: relative;
+        padding: 60px 20px;
+    }
+    
+    .hero-overlay h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+    
+    .booking-box {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-left h2,
+    .key-features-left h3 {
+        font-size: 1.8rem;
+    }
+    
+    .why-desc,
+    .key-features-left p {
+        font-size: 1rem;
+    }
+    
+    .features-list li {
+        gap: 15px;
+    }
+    
+    .feature-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .feature-title {
+        font-size: 1.1rem;
+    }
+    
+    .cta-section {
+        height: 300px;
+    }
+    
+    .cta-overlay h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-btn {
+        padding: 12px 30px;
+    }
+    
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
-        gap: 12px;
     }
+    
+    .grid-item.large,
+    .grid-item:not(.large) {
+        grid-column: span 2;
+        grid-row: span 1;
+        height: 180px;
+    }
+}
 
+@media (max-width: 576px) {
+    .hero-overlay h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-overlay p {
+        font-size: 0.9rem;
+    }
+    
+    .booking-box {
+        padding: 15px;
+    }
+    
+    .form-group label {
+        font-size: 0.8rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .book-now-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .why-choose-section,
+    .key-features-section {
+        padding: 40px 15px;
+    }
+    
+    .why-left h2,
+    .key-features-left h3 {
+        font-size: 1.5rem;
+    }
+    
+    .why-desc,
+    .key-features-left p {
+        font-size: 0.9rem;
+    }
+    
+    .feature-title {
+        font-size: 1rem;
+    }
+    
+    .feature-desc {
+        font-size: 0.9rem;
+    }
+    
+    .cta-section {
+        height: 250px;
+    }
+    
+    .cta-overlay h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
     .grid-item.large,
     .grid-item:not(.large) {
         grid-column: span 1;
-        grid-row: span 1;
-        height: 200px;
+        height: 160px;
     }
 }
