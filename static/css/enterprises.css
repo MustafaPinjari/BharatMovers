@@ -1,0 +1,614 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fcfcfc;
+    color: #171717;
+  }
+  .form-hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 300px;
+    padding: 5px 2vw 0 2vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background: #fff;
+    min-height: 600px;
+    /* border-top: 2px solid #f4f4f4; */
+  }
+  .form-left {
+    max-width: 1000px;
+    width: 100vw;
+    flex: 0 0 500px;
+    padding-top: 10px;
+    padding-right: 200px;
+  }
+  .form-left h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 50px 50px 0;
+    line-height: 1.13;
+    /* letter-spacing: -0.03em; */
+  }
+  .form-left p {
+    font-size: 1rem;
+    color: #464646;
+    margin: 0 0 0 2px;
+    font-weight: 400;
+  }
+  .form-box {
+    max-width: 400px;
+    flex: 1 1 410px;
+    background: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-row {
+    display: flex;
+    gap: 69px;
+    margin-bottom: 12px;
+  }
+  .form-row.solo {
+    gap: 0;
+    margin-bottom: 13px;
+  }
+  .form-group, .form-group-full {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+  }
+  .form-group label, .form-group-full label {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    
+  }
+  .form-group input, .form-group-full input {
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    border-bottom: 2px solid #a5a5a5;
+    background: transparent;
+    outline: none;
+    padding: 5px 2px 8px 0;
+    margin-bottom: 0;
+    transition: border-color .18s;
+  }
+  .form-group input:focus, .form-group-full input:focus {
+    border-bottom: 2.5px solid #ff7300;
+  }
+  .form-btn {
+    margin-top: 13px;
+    background: #ff7300;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.06rem;
+    border: none;
+    border-radius: 5px;
+    padding: 11px 30px 9px 30px;
+    cursor: pointer;
+    transition: background 0.17s, box-shadow 0.13s;
+    box-shadow: 0 2px 12px #e8550020;
+    align-self: flex-start;
+  }
+  .form-btn:hover {
+    background: #e85500;
+  }
+  @media (max-width: 900px) {
+    .form-hero {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      padding: 26px 2vw 0 2vw;
+      min-height: unset;
+      border-top: 2px solid #f4f4f4;
+    }
+    .form-left {
+      max-width: 98vw;
+      flex: unset;
+      margin-bottom: 4px;
+    }
+    .form-box {
+      max-width: 600px;
+      min-width: 0;
+      width: 100%;
+      align-self: stretch;
+    }
+    .form-row {
+      gap: 11px;
+      margin-bottom: 8px;
+    }
+  }
+  @media (max-width: 500px) {
+    .form-hero {
+      padding-left: 1vw; padding-right: 1vw;
+    }
+    .form-left h1 {
+      font-size: 1.13rem;
+      margin-bottom: 10px;
+    }
+    .form-box { padding: 0; }
+    .form-group label, .form-group-full label {
+      font-size: 0.97rem;
+    }
+    .form-group input, .form-group-full input {
+      font-size: 0.95rem;
+    }
+    .form-btn { width: 100%; text-align: center; padding-left:0; padding-right:0; }
+  }
+
+
+/* Feature Block Styles */
+.feature-block {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.feature-img {
+  flex: 0 0 45%;
+}
+
+.feature-img img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #171717;
+}
+
+.feature-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #464646;
+  margin-bottom: 15px;
+}
+
+/* Reach Block Styles */
+.reach-block {
+  background: #f8f9fa;
+  padding:  0 20px;
+  width: 100%;
+  margin: 0;
+}
+
+.reach-bg {
+  max-width: 1800px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.reach-map {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+
+.text-accent {
+  color: #ff7300;
+}
+
+.cta-accent {
+  background: #ff7300;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.cta-accent:hover {
+  background: #e85500;
+}
+
+/* Industries Section Styles */
+.industries {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: left;
+  position: relative;
+}
+
+.industries h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.industries > p {
+  font-size: 1.1rem;
+  color: #464646;
+  max-width: 800px;
+  margin: 0 0 30px 0;
+  text-align: left;
+}
+
+.industry-tags {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.industry-tags img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  justify-content: left;
+  justify-items: left;
+  margin-right: 100px;
+}
+
+.industries-img-row {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  width: 55%;
+  max-width: 600px;
+}
+
+.industry-truck {
+  width: 100%;
+  height: auto;
+}
+
+.industries-caption {
+  font-size: 0.9rem;
+  color: #464646;
+  margin-top: 10px;
+  text-align: right;
+  font-style: italic;
+}
+
+/* Responsive adjustments for industries section */
+@media (max-width: 900px) {
+  .industries {
+    text-align: center;
+  }
+  
+  .industries h2,
+  .industries > p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .industry-tags {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .industries-img-row {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+  
+  .industries-caption {
+    text-align: center;
+  }
+}
+/* Features Section Styles - New Layout */
+.features {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.features h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.features-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.features-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.feature-image {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.feature-item {
+  width: 30%;
+  text-align: center;
+  padding: 20px;
+}
+
+.feature-top, .feature-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-top .feature-item, .feature-bottom .feature-item {
+  width: 50%;
+  max-width: 500px;
+}
+
+.feature-item h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #171717;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #464646;
+}
+
+.feature-divider {
+  position: absolute;
+  height: 2px;
+  background-color: #ff7300;
+  width: 50%;
+}
+
+.top-divider {
+  top: 30%;
+  left: 25%;
+}
+
+.bottom-divider {
+  bottom: 30%;
+  left: 25%;
+}
+
+/* Responsive Adjustments for Features */
+@media (max-width: 900px) {
+  .features-middle {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .feature-item {
+    width: 100%;
+  }
+  
+  .feature-top .feature-item, .feature-bottom .feature-item {
+    width: 100%;
+  }
+  
+  .feature-divider {
+    display: none;
+  }
+}
+
+/* Global Responsive Styles */
+@media (max-width: 1200px) {
+  .form-hero, .feature-block, .industries, .features {
+    max-width: 95%;
+  }
+  
+  .form-hero {
+    gap: 100px;
+  }
+  
+  .form-left {
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .form-hero {
+    gap: 50px;
+  }
+  
+  .form-left {
+    flex: 0 0 400px;
+    padding-right: 20px;
+  }
+  
+  .form-left h1 {
+    font-size: 36px;
+  }
+  
+  .feature-block {
+    flex-direction: column;
+  }
+  
+  .feature-img {
+    flex: 0 0 100%;
+    margin-bottom: 30px;
+  }
+  
+  .feature-img img {
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .feature-text {
+    text-align: center;
+  }
+  
+  .feature-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+  .form-hero {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+  
+  .form-left {
+    width: 100%;
+    flex: none;
+    padding-right: 0;
+  }
+  
+  .form-left h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .form-box {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .feature-text h2 {
+    font-size: 1.6rem;
+  }
+  
+  .feature-text p {
+    font-size: 1rem;
+  }
+  
+  .reach-map {
+    height: 300px;
+  }
+  
+  /* Industries Section Mobile */
+  .industries {
+    padding: 0 15px;
+  }
+  
+  .industries h2 {
+    font-size: 1.8rem;
+  }
+  
+  .industries > p {
+    font-size: 1rem;
+  }
+  
+  .industry-tags, .industries-img-row {
+    width: 100%;
+    position: static;
+  }
+  
+  .industry-tags {
+    margin-bottom: 30px;
+  }
+  
+  .industries-img-row {
+    margin-top: 20px;
+  }
+  
+  .industries-caption {
+    text-align: center;
+  }
+  
+  /* Features Section Mobile */
+  .features {
+    padding: 30px 15px;
+  }
+  
+  .features h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .feature-image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .feature-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .feature-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .form-left h1 {
+    font-size: 28px;
+  }
+  
+  .form-group label, .form-group-full label {
+    font-size: 18px;
+  }
+  
+  .feature-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .features h2, .industries h2 {
+    font-size: 1.5rem;
+  }
+  
+  .feature-item h3 {
+    font-size: 1.1rem;
+  }
+  
+  .feature-item {
+    padding: 10px;
+  }
+}

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'css/service.css' %}">
 
 <div class="service-hero-section">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" class="hero-bg-image" alt="Ride hailing background">
+    <img src="{% static 'images/service.png' %}" alt="Service Hero Image" loading="lazy">
     <div class="hero-overlay">
         <h1>Ride-Hailing Services</h1>
         <p>Bharat Movers Ride-Hailing Services redefine urban transportation by blending convenience, affordability, and safety. Whether you're heading to work, meeting friends, or running errands, our fleet of vehicles ensures you reach your destination effortlessly.</p>
@@ -39,11 +39,28 @@
     <div class="why-left">
         <h2>Why Choose Our <br>Ride-Hailing Services?</h2>
         <p class="why-desc">Effortless rides with comfort, safety, and convenience guaranteed.</p>
-        <div class="why-images">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="Woman commuting" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Bag and keys in car" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80" alt="Scooter rider" loading="lazy">
+        {% comment %}  {% endcomment %} 
+        <div class="bento-grid">
+            <div class="grid-container">
+                <div class="grid-item large">
+                    <img src="{% static 'images/s1.png' %}" alt="Ride Service 1" class="grid-image">
+                </div>
+                
+                <div class="grid-item">
+                    <img src="{% static 'images/s2.png' %}" alt="Ride Service 2" class="grid-image">
+                </div>
+                
+                <div class="grid-item">
+                    <img src="{% static 'images/s3.png' %}" alt="Ride Service 3" class="grid-image">
+                </div>
+                
+                <div class="grid-item">
+                    <img src="{% static 'images/s4.png' %}" alt="Ride Service 4" class="grid-image">
+                </div>
+            </div>
         </div>
+        {% comment %}  {% endcomment %}
+
     </div>
     <div class="why-right">
         <ul class="features-list">
@@ -109,6 +126,7 @@
             <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Service customer">
             <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="App usage">
         </div>
+        
     </div>
 </div>
 {% endblock %}

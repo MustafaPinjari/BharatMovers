@@ -8,7 +8,8 @@ from . import views
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
-    path('dp/', TemplateView.as_view(template_name='dp.html'), name='dp'),
+    path('dp/', TemplateView.as_view(template_name='enterprises.html'), name='enterprises'), 
+    path('enterprises/', TemplateView.as_view(template_name='dp.html'), name='dp'),
     path('services/', TemplateView.as_view(template_name='service.html'), name='service'),
     path('support/', TemplateView.as_view(template_name='support.html'), name='support'),
     path('career/', TemplateView.as_view(template_name='career.html'), name='career'),

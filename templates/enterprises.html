@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/enterprises.css' %}">
+    <header class="hero">
+        <section class="form-hero">
+            <div class="form-left">
+              <h1>Looking to optimize<br>your logistics?<br>Let us help!</h1>
+              <p>Fill out the form, and we’ll provide you with the best solutions for your business.</p>
+            </div>
+            <form class="form-box" autocomplete="off">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first_name">First Name</label>
+                  <input type="text" id="first_name" name="first_name" placeholder="Enter Your First Name" required>
+                </div>
+                <div class="form-group">
+                  <label for="last_name">Last Name</label>
+                  <input type="text" id="last_name" name="last_name" placeholder="Enter Your Last Name" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="Enter Your email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="text" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                </div>
+              </div>
+              <div class="form-row solo">
+                <div class="form-group-full">
+                  <label for="company">Company Name</label>
+                  <input type="text" id="company" name="company" placeholder="Enter Your Company Name" required>
+                </div>
+              </div>
+              <button type="submit" class="form-btn">Get in Touch</button>
+            </form>
+          </section>
+    </header>
+
+    <main>
+        <section class="feature-block">
+            <div class="feature-img">
+                <img src="{% static 'images/et1.png' %}" alt="Warehouse staff on shelves">
+            </div>
+            <div class="feature-text">
+                <h2>Enterprise Logistics Solutions</h2>
+                <p>Robust, scalable transportation and distribution control built for today’s complex supply chain. Our expert team crafts solutions tailored for your enterprise, with precision at every step.</p>
+                <p>We help streamline costs, increase visibility, and maximize your supply chain efficiency.</p>
+            </div>
+        </section>
+
+        <section class="reach-block">
+            <div class="reach-bg">
+                <img src="{% static 'images/et05.png' %}" alt="World map" class="reach-map">
+            </div>
+        </section>
+
+        <section class="industries">
+            <h2>Industries We Serve</h2>
+            <p>From highly regulated sectors to wide range of industries, ensuring reliable transportation solutions tailored to diverse goods and consignments. We take pride in offering different and cost-effective logistics services for:</p>
+            <div class="industry-tags">  
+              <img src="{% static 'images/it.png' %}" alt="Industry categories" class="industry-tags-img">
+            </div>
+            <div class="industries-img-row">
+                <img src="{% static 'images/et3.png' %}" alt="Logistics truck with cargo boxes" class="industry-truck">
+                <p class="industries-caption">From small enterprises to large organizations, our integrated solutions are designed to meet the unique needs of businesses across industries.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Key Features We Offer</h2>
+            <div class="features-container">
+                <div class="feature-top">
+                    <div class="feature-item unified-trip">
+                        <h3>Unified Trip Management</h3>
+                        <p>Access comprehensive trip details for all your goods transportation in one place.</p>
+                    </div>
+                </div>
+                <div class="features-middle">
+                    <div class="feature-item prepaid-wallet">
+                        <h3>Prepaid Wallet System</h3>
+                        <p>Simplify transactions with a prepaid wallet that eliminates cash handling and reimbursement hassles.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="{% static 'images/et4.png' %}" alt="Box character">
+                    </div>
+                    <div class="feature-item multi-user">
+                        <h3>Multi-User Access</h3>
+                        <p>Enable seamless collaboration with easy options to add, remove, or manage user accounts for unified operations.</p>
+                    </div>
+                </div>
+                <div class="feature-bottom">
+                    <div class="feature-item clarity-control">
+                        <h3>Complete Clarity & Control</h3>
+                        <p>Monitor and manage expenses with full transparency, ensuring complete oversight of your logistics operations.</p>
+                    </div>
+                </div>
+                <div class="feature-divider top-divider"></div>
+                <div class="feature-divider bottom-divider"></div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
