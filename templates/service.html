@@ -11,24 +11,32 @@
         <p>Bharat Movers Ride-Hailing Services redefine urban transportation by blending convenience, affordability, and safety. Whether you're heading to work, meeting friends, or running errands, our fleet of vehicles ensures you reach your destination effortlessly.</p>
     </div>
     <div class="booking-box">
-        <form class="booking-form">
+        <form class="booking-form" action="{% url 'bookings:create_booking' %}" method="post">
+            {% csrf_token %}
             <div class="form-group">
-                <label>select vehicle</label>
-                <select>
-                    <option selected>vehicles</option>
+                <label>Select Service</label>
+                <select name="service" required>
+                    <option value="" selected disabled>Select a service</option>
+                    {% for service in services %}
+                    <option value="{{ service.id }}">{{ service.name }} - ₹{{ service.base_price }}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="form-group">
                 <label>Pickup Date & Time</label>
-                <input type="text" placeholder="Select">
+                <input type="datetime-local" name="pickup_date" placeholder="Select" required>
             </div>
             <div class="form-group">
                 <label>Pick-up location</label>
-                <input type="text" placeholder="Search a location">
+                <input type="text" name="pickup_location" placeholder="Enter pickup location" required>
             </div>
             <div class="form-group">
                 <label>Drop-Off Location</label>
-                <input type="text" placeholder="Search a location">
+                <input type="text" name="delivery_location" placeholder="Enter drop-off location" required>
+            </div>
+            <div class="form-group">
+                <label>Additional Notes</label>
+                <textarea name="notes" placeholder="Any special requirements or notes"></textarea>
             </div>
             <button type="submit" class="book-now-btn">Book now <span class="arrow">→</span></button>
         </form>

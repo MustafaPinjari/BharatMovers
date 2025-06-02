@@ -4,13 +4,14 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from services.views import service_page
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', views.home, name='home'),  
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
-    path('dp/', TemplateView.as_view(template_name='enterprises.html'), name='enterprises'), 
-    path('enterprises/', TemplateView.as_view(template_name='dp.html'), name='dp'),
-    path('services/', TemplateView.as_view(template_name='service.html'), name='service'),
+    path('dp/', TemplateView.as_view(template_name='dp.html'), name='dp'), 
+    path('enterprises/', TemplateView.as_view(template_name='enterprises.html'), name='enterprises'),
+    path('services/', service_page, name='service'),
     path('support/', TemplateView.as_view(template_name='support.html'), name='support'),
     path('career/', TemplateView.as_view(template_name='career.html'), name='career'),
     path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),

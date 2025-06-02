@@ -1,0 +1,68 @@
+{% extends "accounts/admin/admin_base.html" %}
+
+{% block admin_title %}Edit Vehicle Type{% endblock %}
+
+{% block admin_content %}
+<div class="admin-card">
+    <div class="mb-4">
+        <h2>Edit Vehicle Type</h2>
+        <p class="text-muted">Modify vehicle type "{{ vehicle_type.name }}"</p>
+    </div>
+    
+    <form method="post" action="{% url 'accounts:admin_edit_vehicle_type' vehicle_type.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="admin-form-group">
+            <label for="name">Vehicle Type Name</label>
+            <input type="text" id="name" name="name" class="admin-form-control" value="{{ vehicle_type.name }}" required>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="admin-form-group">
+                    <label for="capacity">Capacity (kg)</label>
+                    <input type="number" id="capacity" name="capacity" class="admin-form-control" min="0" value="{{ vehicle_type.capacity }}" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="admin-form-group">
+                    <label for="price_per_km">Rate per km (₹)</label>
+                    <input type="number" id="price_per_km" name="price_per_km" class="admin-form-control" min="0" step="0.01" value="{{ vehicle_type.price_per_km }}" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="admin-form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="admin-form-control" rows="3">{{ vehicle_type.description }}</textarea>
+            <small class="text-muted">Optional description of the vehicle type and its features</small>
+        </div>
+        
+        <div class="admin-form-group">
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image" class="admin-form-control">
+            <small class="text-muted">Leave empty to keep current image</small>
+            
+            {% if vehicle_type.image %}
+            <div class="mt-2">
+                <p>Current image:</p>
+                <img src="{{ vehicle_type.image.url }}" alt="{{ vehicle_type.name }}" style="max-width: 200px; max-height: 150px;">
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="admin-form-group">
+            <div class="form-check">
+                <input type="checkbox" id="is_active" name="is_active" class="form-check-input" {% if vehicle_type.is_active %}checked{% endif %}>
+                <label for="is_active" class="form-check-label">Active</label>
+                <small class="d-block text-muted">Only active vehicle types will be shown to customers</small>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-between mt-4">
+            <a href="{% url 'accounts:admin_vehicle_types' %}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Update Vehicle Type</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

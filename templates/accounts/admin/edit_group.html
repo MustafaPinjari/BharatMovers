@@ -1,0 +1,26 @@
+{% extends "accounts/admin/admin_base.html" %}
+
+{% block admin_title %}Edit Group{% endblock %}
+
+{% block admin_content %}
+<div class="admin-card">
+    <div class="mb-4">
+        <h2>Edit Group</h2>
+        <p class="text-muted">Modify group "{{ group.name }}"</p>
+    </div>
+    
+    <form method="post" action="{% url 'accounts:admin_edit_group' group.id %}">
+        {% csrf_token %}
+        
+        <div class="admin-form-group">
+            <label for="name">Group Name</label>
+            <input type="text" id="name" name="name" class="admin-form-control" value="{{ group.name }}" required>
+        </div>
+        
+        <div class="d-flex justify-content-between mt-4">
+            <a href="{% url 'accounts:admin_groups' %}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Update Group</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

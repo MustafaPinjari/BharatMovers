@@ -24,28 +24,40 @@
 <!-- FORM SECTION -->
 <div class="container partner-form-section">
     <h2>Attach Your Vehicle and<br>Start Earning Today</h2>
-    <form class="partner-form-card">
+    
+    {% if messages %}
+    <div class="alert-messages">
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    <form class="partner-form-card" method="POST" action="{% url 'services:delivery_partner_request' %}">
+        {% csrf_token %}
         <div class="partner-form-grid">
             <div class="form-group">
-                <input type="text" placeholder="First Name" required>
+                <input type="text" name="first_name" placeholder="First Name" required value="{% if user.is_authenticated %}{{ user.first_name }}{% endif %}">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Last Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required value="{% if user.is_authenticated %}{{ user.last_name }}{% endif %}">
             </div>
             <div class="form-group">
-                <input type="email" placeholder="Email Id" required>
+                <input type="email" name="email" placeholder="Email Id" required value="{% if user.is_authenticated %}{{ user.email }}{% endif %}">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Mobile No" required>
+                <input type="text" name="phone_number" placeholder="Mobile No" required value="{% if user.is_authenticated %}{{ user.phone_number }}{% endif %}">
             </div>
         </div>
         <div class="partner-form-row">
             <div class="form-group">
-                <select required>
+                <select name="vehicle_type" required>
                     <option value="">Vehicle Type</option>
-                    <option>Bike</option>
-                    <option>Mini Truck</option>
-                    <option>Pickup Van</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Mini Truck">Mini Truck</option>
+                    <option value="Pickup Van">Pickup Van</option>
                 </select>
             </div>
         </div>

@@ -1,0 +1,55 @@
+{% extends "accounts/admin/admin_base.html" %}
+
+{% block admin_title %}Services Management{% endblock %}
+
+{% block admin_content %}
+<div class="admin-card">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Services</h2>
+        <a href="{% url 'accounts:admin_add_service' %}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add Service
+        </a>
+    </div>
+    
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Base Price</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for service in services %}
+            <tr>
+                <td>#{{ service.id }}</td>
+                <td>{{ service.name }}</td>
+                <td>{{ service.description|truncatechars:50 }}</td>
+                <td>₹{{ service.base_price }}</td>
+                <td>
+                    {% if service.is_active %}
+                    <span class="badge bg-success">Active</span>
+                    {% else %}
+                    <span class="badge bg-danger">Inactive</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <div class="admin-actions">
+                        <a href="{% url 'accounts:admin_edit_service' service.id %}" class="btn btn-sm btn-warning">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">No services found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

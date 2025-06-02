@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Booking Details - {{ booking.id }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Booking #{{ booking.id }}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title">Booking Status</h5>
+                        <span class="badge {% if booking.status == 'PENDING' %}bg-warning{% elif booking.status == 'CONFIRMED' %}bg-info{% elif booking.status == 'IN_PROGRESS' %}bg-primary{% elif booking.status == 'COMPLETED' %}bg-success{% elif booking.status == 'CANCELLED' %}bg-danger{% endif %} p-2">
+                            {{ booking.get_status_display }}
+                        </span>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h5 class="card-title">Service Details</h5>
+                            <p><strong>Service:</strong> {{ booking.service.name }}</p>
+                            <p><strong>Base Price:</strong> ₹{{ booking.service.base_price }}</p>
+                            <p><strong>Vehicle Type:</strong> {{ booking.service.vehicle_type.name }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="card-title">Booking Information</h5>
+                            <p><strong>Created:</strong> {{ booking.created_at|date:"F d, Y" }}</p>
+                            <p><strong>Pickup Date:</strong> {{ booking.pickup_date|date:"F d, Y h:i A" }}</p>
+                            {% if booking.total_amount %}
+                            <p><strong>Total Amount:</strong> ₹{{ booking.total_amount }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h5 class="card-title">Pickup Location</h5>
+                            <p>{{ booking.pickup_location }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="card-title">Delivery Location</h5>
+                            <p>{{ booking.delivery_location }}</p>
+                        </div>
+                    </div>
+
+                    {% if booking.notes %}
+                    <div class="mb-4">
+                        <h5 class="card-title">Additional Notes</h5>
+                        <p>{{ booking.notes }}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if booking.status == 'PENDING' %}
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{% url 'bookings:cancel_booking' booking.id %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel this booking?')">Cancel Booking</a>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'accounts:profile' %}" class="btn btn-secondary">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

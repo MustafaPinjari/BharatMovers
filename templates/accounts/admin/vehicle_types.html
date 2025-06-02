@@ -1,0 +1,55 @@
+{% extends "accounts/admin/admin_base.html" %}
+
+{% block admin_title %}Vehicle Types Management{% endblock %}
+
+{% block admin_content %}
+<div class="admin-card">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Vehicle Types</h2>
+        <a href="{% url 'accounts:admin_add_vehicle_type' %}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add Vehicle Type
+        </a>
+    </div>
+    
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Capacity</th>
+                <th>Rate per km</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehicle_type in vehicle_types %}
+            <tr>
+                <td>#{{ vehicle_type.id }}</td>
+                <td>{{ vehicle_type.name }}</td>
+                <td>{{ vehicle_type.capacity }}</td>
+                <td>₹{{ vehicle_type.rate_per_km }}</td>
+                <td>
+                    {% if vehicle_type.is_active %}
+                    <span class="badge bg-success">Active</span>
+                    {% else %}
+                    <span class="badge bg-danger">Inactive</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <div class="admin-actions">
+                        <a href="{% url 'accounts:admin_edit_vehicle_type' vehicle_type.id %}" class="btn btn-sm btn-warning">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">No vehicle types found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
