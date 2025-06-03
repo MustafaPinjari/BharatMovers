@@ -71,42 +71,33 @@
 /* Status Badges */
 .status-badge {
     display: inline-block;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 0.25rem;
-    text-align: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
 }
 
 /* Status Colors */
 .status-pending {
     background-color: #ffc107;
-    color: #212529;
 }
 
 .status-confirmed {
-    background-color: #0dcaf0;
-    color: #212529;
+    background-color: #17a2b8;
 }
 
-.status-in_transit {
-    background-color: #6610f2;
-    color: #fff;
+.status-in_transit,
+.status-in-progress {
+    background-color: #007bff;
 }
 
-.status-delivered {
-    background-color: #198754;
-    color: #fff;
-}
-
+.status-delivered,
 .status-completed {
-    background-color: #20c997;
-    color: #212529;
+    background-color: #28a745;
 }
 
 .status-cancelled {
     background-color: #dc3545;
-    color: #fff;
 }
 
 /* Admin Sidebar */
@@ -999,4 +990,15 @@ textarea.form-control {
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: #343a40;
+}
+
+/* Status Display */
+.status-display {
+    display: flex;
+    align-items: center;
+}
+
+.status-text {
+    font-size: 0.875rem;
+    font-weight: 500;
 }

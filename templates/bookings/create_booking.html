@@ -32,7 +32,11 @@
                         
                         <div class="mb-3">
                             <label for="{{ form.pickup_date.id_for_label }}" class="form-label">Pickup Date & Time</label>
-                            {{ form.pickup_date }}
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                {{ form.pickup_date }}
+                            </div>
+                            <small class="form-text text-muted">Click to select date and time</small>
                             {% if form.pickup_date.errors %}
                             <div class="text-danger">{{ form.pickup_date.errors }}</div>
                             {% endif %}

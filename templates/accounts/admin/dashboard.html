@@ -94,9 +94,10 @@
                                 <td>{{ booking.service.name }}</td>
                                 <td>{{ booking.move_date|date:"M d, Y" }}</td>
                                 <td>
-                                    <span class="status-badge status-{{ booking.status|lower }}">
-                                        {{ booking.status }}
-                                    </span>
+                                    <div class="status-display">
+                                        <span class="status-badge status-{{ booking.status|lower }}"></span>
+                                        <span class="status-text">{{ booking.status }}</span>
+                                    </div>
                                 </td>
                                 <td>
                                     <a href="{% url 'accounts:admin_view_booking' booking.id %}" class="btn btn-primary btn-sm">

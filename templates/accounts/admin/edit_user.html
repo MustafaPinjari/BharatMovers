@@ -9,8 +9,30 @@
         <p class="text-muted">Modify user account details for {{ user.email }}</p>
     </div>
     
-    <form method="post" action="{% url 'accounts:admin_edit_user' user.id %}">
+    <form method="post" action="{% url 'accounts:admin_edit_user' user.id %}" enctype="multipart/form-data">
         {% csrf_token %}
+        
+        <!-- Profile Image Section -->
+        <div class="admin-form-group mb-4">
+            <label>Profile Image</label>
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <div class="profile-image-container">
+                        {% if user.profile_image %}
+                            <img src="{{ user.profile_image.url }}" alt="Profile Image" class="admin-profile-image">
+                        {% else %}
+                            <div class="admin-profile-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="file" id="profile_image" name="profile_image" class="form-control">
+                    <small class="text-muted">Upload a square image for best results (JPG, PNG). Maximum size: 5MB</small>
+                </div>
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-6">
@@ -52,6 +74,22 @@
         
         <div class="admin-form-group">
             <div class="form-check">
+                <input type="checkbox" id="email_notifications" name="email_notifications" class="form-check-input" {% if user.email_notifications %}checked{% endif %}>
+                <label for="email_notifications" class="form-check-label">Email Notifications</label>
+                <small class="d-block text-muted">User will receive email notifications</small>
+            </div>
+        </div>
+        
+        <div class="admin-form-group">
+            <div class="form-check">
+                <input type="checkbox" id="sms_notifications" name="sms_notifications" class="form-check-input" {% if user.sms_notifications %}checked{% endif %}>
+                <label for="sms_notifications" class="form-check-label">SMS Notifications</label>
+                <small class="d-block text-muted">User will receive SMS notifications</small>
+            </div>
+        </div>
+        
+        <div class="admin-form-group">
+            <div class="form-check">
                 <input type="checkbox" id="is_staff" name="is_staff" class="form-check-input" {% if user.is_staff %}checked{% endif %}>
                 <label for="is_staff" class="form-check-label">Staff Status</label>
                 <small class="d-block text-muted">Designates whether this user can access the admin panel</small>
@@ -72,4 +110,32 @@
         </div>
     </form>
 </div>
+
+<style>
+    .profile-image-container {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 3px solid #e9ecef;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .admin-profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .admin-profile-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e9ecef;
+        color: #6c757d;
+        font-size: 2rem;
+    }
+</style>
 {% endblock %}

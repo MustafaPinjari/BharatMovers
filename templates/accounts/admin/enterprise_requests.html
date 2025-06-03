@@ -44,9 +44,10 @@
                         <td>{{ request.email }}</td>
                         <td>{{ request.phone_number }}</td>
                         <td>
-                            <span class="status-badge status-{{ request.status|lower }}">
-                                {{ request.status }}
-                            </span>
+                            <div class="status-display">
+                                <span class="status-badge status-{{ request.status|lower }}"></span>
+                                <span class="status-text">{{ request.status }}</span>
+                            </div>
                         </td>
                         <td>{{ request.created_at|date:"M d, Y" }}</td>
                         <td>

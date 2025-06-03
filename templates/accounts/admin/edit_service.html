@@ -22,6 +22,17 @@
             <textarea id="description" name="description" class="admin-form-control" rows="4" required>{{ service.description }}</textarea>
         </div>
         
+        <div class="admin-form-group">
+            <label for="vehicle_type">Vehicle Type</label>
+            <select id="vehicle_type" name="vehicle_type" class="admin-form-control" required>
+                {% for vtype in vehicle_types %}
+                    <option value="{{ vtype.id }}" {% if service.vehicle_type_id == vtype.id %}selected{% endif %}>
+                        {{ vtype.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        
         <div class="row">
             <div class="col-md-6">
                 <div class="admin-form-group">
@@ -35,10 +46,10 @@
                     <input type="file" id="icon" name="icon" class="admin-form-control">
                     <small class="text-muted">Leave empty to keep current icon</small>
                     
-                    {% if service.icon %}
+                    {% if service.vehicle_type.image %}
                     <div class="mt-2">
                         <p>Current icon:</p>
-                        <img src="{{ service.icon.url }}" alt="{{ service.name }} Icon" style="max-width: 100px; max-height: 100px;">
+                        <img src="{{ service.vehicle_type.image.url }}" alt="{{ service.name }} Icon" style="max-width: 100px; max-height: 100px;">
                     </div>
                     {% endif %}
                 </div>

@@ -12,6 +12,9 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Flatpickr for Better Date & Time Picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/admin.css' %}">
     
@@ -103,6 +106,31 @@
                     bsAlert.close();
                 });
             }, 5000);
+        });
+    </script>
+    
+    <!-- Flatpickr JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize date inputs
+            flatpickr('input[type="date"]', {
+                dateFormat: "Y-m-d",
+                allowInput: true,
+                disableMobile: false,
+                appendTo: document.body // Ensures the calendar shows above other elements if needed
+            });
+            
+            // Initialize datetime inputs - for fields that need both date and time
+            flatpickr('input.datetime-picker, input[name*="date"][name*="time"], input[name="pickup_date"]', {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i",
+                time_24hr: true,
+                minuteIncrement: 15,
+                allowInput: true,
+                disableMobile: false,
+                appendTo: document.body
+            });
         });
     </script>
     

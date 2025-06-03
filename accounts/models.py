@@ -19,6 +19,7 @@ class CustomUser(AbstractUser):
     join_date = models.DateTimeField(auto_now_add=True)
     email_notifications = models.BooleanField(default=True)
     sms_notifications = models.BooleanField(default=True)
+    profile_image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']

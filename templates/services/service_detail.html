@@ -1,0 +1,396 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ service.name }} | Bharat Movers{% endblock %}
+
+{% block extra_css %}
+<style>
+    .service-detail-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    
+    .service-header {
+        position: relative;
+        height: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .service-header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    
+    .service-header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+        z-index: 2;
+    }
+    
+    .service-header-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        color: white;
+        padding: 0 2rem;
+    }
+    
+    .service-header-content h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    
+    .service-header-content p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .service-content {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 2rem;
+    }
+    
+    @media (max-width: 992px) {
+        .service-content {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .service-details {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+    }
+    
+    .service-details h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .service-info-item {
+        display: flex;
+        margin-bottom: 1.25rem;
+    }
+    
+    .service-info-icon {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 12px;
+        background: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        color: #FF6A00;
+        font-size: 1.5rem;
+    }
+    
+    .service-info-content h3 {
+        margin: 0 0 0.25rem;
+        font-size: 1.1rem;
+    }
+    
+    .service-info-content p {
+        margin: 0;
+        color: #6c757d;
+    }
+    
+    .service-description {
+        margin-top: 2rem;
+        line-height: 1.7;
+    }
+    
+    .service-booking-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        padding: 1.5rem;
+        position: sticky;
+        top: 2rem;
+    }
+    
+    .service-booking-card h3 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+    }
+    
+    .booking-price {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .booking-price-amount {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #FF6A00;
+    }
+    
+    .booking-price-label {
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-left: 0.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+    
+    .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-size: 0.95rem;
+    }
+    
+    .form-control:focus {
+        outline: none;
+        border-color: #FF6A00;
+        box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.15);
+    }
+    
+    .booking-btn {
+        display: block;
+        width: 100%;
+        background: #FF6A00;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-top: 1rem;
+        text-decoration: none;
+    }
+    
+    .booking-btn:hover {
+        background: #e55e00;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 106, 0, 0.2);
+    }
+    
+    .booking-note {
+        font-size: 0.85rem;
+        text-align: center;
+        margin-top: 1rem;
+        color: #6c757d;
+    }
+    
+    .features-section {
+        margin-top: 3rem;
+    }
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .feature-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: #FF6A00;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .feature-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .feature-desc {
+        color: #6c757d;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="service-detail-container">
+    <div class="service-header">
+        {% if service.vehicle_type.image %}
+        <img src="{{ service.vehicle_type.image.url }}" alt="{{ service.name }}" class="service-header-bg">
+        {% else %}
+        <img src="{% static 'images/service.png' %}" alt="{{ service.name }}" class="service-header-bg">
+        {% endif %}
+        <div class="service-header-overlay"></div>
+        <div class="service-header-content">
+            <h1>{{ service.name }}</h1>
+            <p>{{ service.description|truncatewords:25 }}</p>
+        </div>
+    </div>
+    
+    <div class="service-content">
+        <div class="service-details">
+            <h2>Service Details</h2>
+            
+            <div class="service-info-item">
+                <div class="service-info-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div class="service-info-content">
+                    <h3>Vehicle Type</h3>
+                    <p>{{ service.vehicle_type.name }}</p>
+                </div>
+            </div>
+            
+            <div class="service-info-item">
+                <div class="service-info-icon">
+                    <i class="fas fa-weight"></i>
+                </div>
+                <div class="service-info-content">
+                    <h3>Capacity</h3>
+                    <p>{{ service.vehicle_type.capacity }}</p>
+                </div>
+            </div>
+            
+            <div class="service-info-item">
+                <div class="service-info-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <div class="service-info-content">
+                    <h3>Price per KM</h3>
+                    <p>₹{{ service.vehicle_type.price_per_km }} / kilometer</p>
+                </div>
+            </div>
+            
+            <div class="service-description">
+                <h2>Service Description</h2>
+                <p>{{ service.description }}</p>
+                <p>Our professional movers handle everything with care and precision, ensuring your items reach their destination safely and on time.</p>
+            </div>
+            
+            <div class="features-section">
+                <h2>Service Benefits</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-title">Safe Transportation</div>
+                        <div class="feature-desc">Your items are handled with extra care and proper safety measures.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="feature-title">On-time Delivery</div>
+                        <div class="feature-desc">We value your time and ensure timely pickup and delivery.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="feature-title">Professional Team</div>
+                        <div class="feature-desc">Experienced staff that is trained to handle all moving needs.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-title">24/7 Support</div>
+                        <div class="feature-desc">Our customer service team is always ready to assist you.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="service-booking-card">
+            <h3>Book This Service</h3>
+            
+            <div class="booking-price">
+                <div class="booking-price-amount">₹{{ service.base_price }}</div>
+                <div class="booking-price-label">base price</div>
+            </div>
+            
+            <form action="{% url 'bookings:create_booking' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="service" value="{{ service.id }}">
+                
+                <div class="form-group">
+                    <label for="pickup_date">Pickup Date & Time</label>
+                    <input type="datetime-local" id="pickup_date" name="pickup_date" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pickup_location">Pickup Location</label>
+                    <input type="text" id="pickup_location" name="pickup_location" class="form-control" placeholder="Enter the pickup address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="delivery_location">Delivery Location</label>
+                    <input type="text" id="delivery_location" name="delivery_location" class="form-control" placeholder="Enter the delivery address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional)</label>
+                    <textarea id="notes" name="notes" class="form-control" rows="3" placeholder="Any special requirements or instructions"></textarea>
+                </div>
+                
+                <button type="submit" class="booking-btn">Book Now</button>
+                
+                <p class="booking-note">No payment required now. Final price will be calculated based on distance and additional services.</p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

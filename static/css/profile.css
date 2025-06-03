@@ -5,67 +5,45 @@
 }
 
 .profile-header {
-    background: linear-gradient(135deg, #ff6b00, #ff8533);
-    border-radius: 15px;
-    padding: 2rem;
     display: flex;
     align-items: center;
     gap: 2rem;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
 }
 
 .profile-avatar {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-avatar i {
-    font-size: 3rem;
-}
-
-.profile-info {
-    flex: 1;
+    color: #FF6A00;
 }
 
 .profile-info h1 {
-    margin: 0 0 1rem 0;
-    font-size: 2rem;
+    margin: 0 0 1rem;
+    color: #333;
 }
 
 .profile-info p {
     margin: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    color: #666;
 }
 
-.profile-actions .btn {
-    background: white;
-    color: #ff6b00;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.profile-info i {
+    width: 20px;
+    color: #FF6A00;
+    margin-right: 0.5rem;
 }
 
-.profile-actions .btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
+.profile-actions {
+    margin-left: auto;
 }
 
 .profile-section {
-    background: white;
-    border-radius: 15px;
+    background: #fff;
     padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .profile-section h2 {
