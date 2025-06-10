@@ -16,7 +16,8 @@
                 <h1>Create Account</h1>
                 <p>Join Bharat Movers today</p>
             </div>
-            <form class="auth-form" id="signupForm">
+            <form class="auth-form" id="signupForm" method="POST" action="{% url 'accounts:register' %}">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
                     <input type="text" id="fullname" name="fullname" required>

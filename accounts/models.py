@@ -59,3 +59,30 @@ class UserMessage(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+
+class EnterpriseRequest(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('approved', 'Approved'),
+        ('rejected', 'Rejected'),
+    ]
+    
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='enterprise_requests')
+    company_name = models.CharField(max_length=255)
+    contact_name = models.CharField(max_length=255)
+    contact_email = models.EmailField()
+    contact_phone = models.CharField(max_length=20)
+    company_size = models.CharField(max_length=50, help_text='Number of employees')
+    message = models.TextField(blank=True, null=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return f"{self.company_name} - {self.get_status_display()}"
+    
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'Enterprise Request'
+        verbose_name_plural = 'Enterprise Requests'

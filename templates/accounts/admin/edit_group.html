@@ -1,26 +1,142 @@
-{% extends "accounts/admin/admin_base.html" %}
+{% extends 'accounts/admin/base_admin.html' %}
+{% load static %}
 
-{% block admin_title %}Edit Group{% endblock %}
+{% block admin_title %}Edit Group - Admin{% endblock %}
+
+{% block admin_heading %}Edit Group{% endblock %}
 
 {% block admin_content %}
 <div class="admin-card">
-    <div class="mb-4">
-        <h2>Edit Group</h2>
-        <p class="text-muted">Modify group "{{ group.name }}"</p>
+    <div class="card-header">
+        <h2>Edit Group: {{ group.name }}</h2>
     </div>
-    
-    <form method="post" action="{% url 'accounts:admin_edit_group' group.id %}">
-        {% csrf_token %}
-        
-        <div class="admin-form-group">
-            <label for="name">Group Name</label>
-            <input type="text" id="name" name="name" class="admin-form-control" value="{{ group.name }}" required>
-        </div>
-        
-        <div class="d-flex justify-content-between mt-4">
-            <a href="{% url 'accounts:admin_groups' %}" class="btn btn-secondary">Cancel</a>
-            <button type="submit" class="btn btn-primary">Update Group</button>
-        </div>
-    </form>
+    <div class="card-body">
+        <form method="post" class="admin-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="name">Group Name</label>
+                <input type="text" id="name" name="name" class="form-control" value="{{ group.name }}" required>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+                <a href="{% url 'accounts:admin_view_group' group.id %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
 </div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.admin-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    background-color: transparent;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+</style>
 {% endblock %}
