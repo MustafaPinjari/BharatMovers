@@ -172,10 +172,43 @@ def delivery_partners(request):
 @login_required
 @user_passes_test(lambda u: u.is_superuser or u.is_staff)
 def admin_delivery_partners(request):
-    """View to list all delivery partners."""
-    partners = CustomUser.objects.filter(is_driver=True)
+    """View to list all delivery partner requests."""
+    from services.models import DeliveryPartnerRequest
+    
+    # Handle form submissions (approve/reject/delete)
+    if request.method == 'POST':
+        request_id = request.POST.get('request_id')
+        action = request.POST.get('action')
+        
+        try:
+            partner_request = DeliveryPartnerRequest.objects.get(id=request_id)
+            
+            if action == 'approve':
+                partner_request.status = 'APPROVED'
+                partner_request.save()
+                # Optionally, you can set the user as a driver here
+                user = partner_request.user
+                user.is_driver = True
+                user.save()
+                messages.success(request, f"Successfully approved {partner_request.first_name}'s application.")
+                
+            elif action == 'reject':
+                partner_request.status = 'REJECTED'
+                partner_request.save()
+                messages.success(request, f"Successfully rejected {partner_request.first_name}'s application.")
+                
+            elif action == 'delete':
+                partner_request.delete()
+                messages.success(request, "Request deleted successfully.")
+                
+        except DeliveryPartnerRequest.DoesNotExist:
+            messages.error(request, "Request not found.")
+    
+    # Get all delivery partner requests, ordered by creation date (newest first)
+    delivery_requests = DeliveryPartnerRequest.objects.all().order_by('-created_at')
+    
     return render(request, 'accounts/admin/delivery_partners.html', {
-        'partners': partners,
+        'delivery_requests': delivery_requests,
         'active_tab': 'delivery_partners'
     })
 
